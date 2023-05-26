@@ -5,8 +5,14 @@ import { communicationCodeValues } from '../../../lib/templates';
 
 export function load({ params }) {
 	const values = communicationCodeValues(params.code, params.team);
-	/*
-	const tableSimple: TableSource = {
+
+	return {
+		values
+	};
+}
+
+/*
+	const tableDatas: TableSource = {
 		// A list of heading labels.
 		head: [
 			'businessProviderCode',
@@ -27,7 +33,3 @@ export function load({ params }) {
 		])
 	};
 */
-	return {
-		values
-	};
-}

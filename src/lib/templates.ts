@@ -1,73 +1,85 @@
-import { element } from 'svelte/internal';
 import jsonFile from './templates.json';
-
-import { type } from 'os';
-//import { team } from '../routes/[team]/+page.server';
-
-type JsonOutputType = {
-	team: string;
-	values: {
-		communicationCode: string;
-		businessProviderCode: string | null;
-		partnerCode: string | null;
-		productCode: string | null;
-		businessUnitCode: string | null;
-		communicationType: string;
-		templateId: string;
-	}[];
-};
 
 type Data = {
 	businessProviderCode: string;
 	partnerCode: string;
 	productCode: string;
 	businessUnitCode: string;
-	communicationType: string;
+	channelType: string;
 	templateId: string;
 };
 
-export const templates: JsonOutputType[] = jsonFile as any;
-export const teams: string[] = myTeams();
+export type Card = {
+	team: string;
+	communicationCode: string;
+	templatesCount: number;
+	businessUnitCode: string;
+	channelType: string[];
+};
+
+export var teams: string[] = myTeams();
 
 function myTeams(): string[] {
-	const listTeam: string[] = [];
+	var listTeam: string[] = [];
 	for (const jsonDatas of jsonFile) {
 		listTeam.push(jsonDatas.team);
 	}
 	return listTeam;
 }
 
-export function communicationCode(currentTeam: string): string[] {
-	const communicationCode: string[] = [];
-	for (const jsonDatas of jsonFile) {
+export function getCommunicationCode(currentTeam: string): string[] {
+	var allCodes: string[] = [];
+	for (var jsonDatas of jsonFile) {
 		if (jsonDatas.team == currentTeam) {
-			for (const value of jsonDatas.values) {
-				communicationCode.push(value.communicationCode);
+			for (var value of jsonDatas.values) {
+				allCodes.push(value.communicationCode);
 			}
 		}
 	}
-	//parcours communicationCode[], ne récupère pas les doublons
-	let eachCommunicationCode: string[] = [];
-	communicationCode.forEach((element) => {
-		if (!eachCommunicationCode.includes(element)) {
-			eachCommunicationCode.push(element);
+	return uniqueItems(allCodes);
+}
+
+export function createCard(currentTeam: string, communicationCode: string): Card {
+	var templates: string[] = [];
+	var businessUnitCode: string[] = [];
+	var channelType: string[] = [];
+
+	for (var jsonDatas of jsonFile) {
+		if (jsonDatas.team == currentTeam) {
+			for (var code of jsonDatas.values) {
+				if (code.communicationCode == communicationCode) {
+					templates.push(code.templateId);
+					channelType.push(code.channelType);
+					businessUnitCode.push(code.businessUnitCode);
+				}
+			}
 		}
-	});
-	return eachCommunicationCode;
+	}
+	var uniqueBusinessCode = uniqueItems(businessUnitCode);
+
+	var card: Card = {
+		team: currentTeam,
+		communicationCode: communicationCode,
+		templatesCount: uniqueItems(templates).length,
+		businessUnitCode: uniqueBusinessCode.join(', '),
+		channelType: uniqueItems(channelType)
+	};
+
+	return card;
 }
 
 export function communicationCodeValues(communicationCode: string, currentTeam: string): Data[] {
-	const datas: Data[] = [];
-	for (const jsonDatas of jsonFile) {
+	var datas: Data[] = [];
+	for (var jsonDatas of jsonFile) {
 		if (jsonDatas.team == currentTeam) {
-			for (const value of jsonDatas.values) {
+			for (var value of jsonDatas.values) {
 				if (value.communicationCode == communicationCode) {
 					const data: Data = {
-						businessProviderCode: isNotNull(value.businessProviderCode),
-						partnerCode: isNotNull(value.partnerCode),
-						productCode: isNotNull(value.productCode),
-						businessUnitCode: isNotNull(value.businessUnitCode),
-						communicationType: value.communicationType,
+						businessProviderCode: notNull(value.businessProviderCode),
+						partnerCode: notNull(value.partnerCode),
+						productCode: notNull(value.productCode),
+						businessUnitCode: notNull(value.businessUnitCode),
+						channelType: value.channelType,
 						templateId: value.templateId
 					};
 					datas.push(data);
@@ -78,10 +90,16 @@ export function communicationCodeValues(communicationCode: string, currentTeam: 
 	return datas;
 }
 
-function isNotNull(verification: string | null): string {
-	if (verification != null) {
-		return verification;
-	} else {
-		return '*';
-	}
+function notNull(param: string | null): string {
+	return param != null ? param : '*';
+}
+
+function uniqueItems(param: string[]): string[] {
+	var unique: string[] = [];
+	param.forEach((element) => {
+		if (!unique.includes(element)) {
+			unique.push(element);
+		}
+	});
+	return unique;
 }
