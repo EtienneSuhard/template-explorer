@@ -71,11 +71,7 @@
 		{#each $searchStore.filtered as code}
 			<a
 				href="/{code.team}/{code.communicationCode}"
-<<<<<<< HEAD
 				class="card card-hover mx-2 my-2 flex-initial card w-96 h-64 overflow-hidden variant-initial shadow-lg no-underline justify-between"
-=======
-				class="card card-hover flex-initial card w-96 h-64 overflow-hidden variant-initial shadow-lg no-underline justify-between"
->>>>>>> f54312ec0e7b1451aa0a4ab617cce3cd53384c95
 			>
 				<div class="card header p-4 h-48 space-y-4 break-words">
 					<h3>{code.communicationCode}</h3>

@@ -6,20 +6,14 @@
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
-	import { onMount } from 'svelte';
 	export let data;
-
-	var teams: string[];
-	onMount(async () => {
-		teams = data.teams;
-	});
 </script>
 
 <!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="sidebarLeft">
 		<AppBar>
-			{#each teams as team}
+			{#each data.teams as team}
 				<ul class="list">
 					<li>
 						<nav>
