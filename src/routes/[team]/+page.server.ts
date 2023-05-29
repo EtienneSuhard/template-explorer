@@ -1,14 +1,17 @@
 import { error } from '@sveltejs/kit';
-import { communicationCode } from '../../lib/templates';
-import { tableMapperValues } from '@skeletonlabs/skeleton';
-import type { TableSource } from '@skeletonlabs/skeleton';
+import { getCommunicationCode, createCard } from '../../lib/templatesjson/templates';
+import type { Card } from '../../lib/templatesjson/templates';
 
 export function load({ params }) {
-	const codes = communicationCode(params.team);
-	const thisTeam = params.team;
+	const codes = getCommunicationCode(params.team);
+	var cards: Card[] = [];
 
+	for (var code of codes) {
+		var codeValue = code.valueOf();
+		var card = createCard(params.team, codeValue);
+		cards.push(card);
+	}
 	return {
-		codes,
-		thisTeam
+		cards
 	};
 }

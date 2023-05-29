@@ -1,12 +1,18 @@
 import { error } from '@sveltejs/kit';
-import { communicationCodeValues } from '../../../lib/templates';
+import { communicationCodeValues } from '../../../lib/templatesjson/templates';
 //import { tableMapperValues } from '@skeletonlabs/skeleton';
 //import type { TableSource } from '@skeletonlabs/skeleton';
 
 export function load({ params }) {
 	const values = communicationCodeValues(params.code, params.team);
-	/*
-	const tableSimple: TableSource = {
+
+	return {
+		values
+	};
+}
+
+/*
+	const tableDatas: TableSource = {
 		// A list of heading labels.
 		head: [
 			'businessProviderCode',
@@ -27,7 +33,3 @@ export function load({ params }) {
 		])
 	};
 */
-	return {
-		values
-	};
-}
