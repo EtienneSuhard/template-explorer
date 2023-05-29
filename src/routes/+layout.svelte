@@ -8,13 +8,18 @@
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
 	export let data;
+
+	var teams: string[];
+	onMount(async () => {
+		teams = data.teams;
+	});
 </script>
 
 <!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="sidebarLeft">
 		<AppBar>
-			{#each data.teams as team}
+			{#each teams as team}
 				<ul class="list">
 					<li>
 						<nav>
