@@ -1,35 +1,13 @@
-import { error } from '@sveltejs/kit';
-import { communicationCodeValues } from '../../../lib/templatesjson/templates';
-//import { tableMapperValues } from '@skeletonlabs/skeleton';
-//import type { TableSource } from '@skeletonlabs/skeleton';
+import { getConfigurations } from '$lib/templatesjson/templates';
 
 export function load({ params }) {
-	const values = communicationCodeValues(params.code, params.team);
+	var jsonDatas = getConfigurations(params.code, params.team);
 
 	return {
-		values
+		jsonDatas
 	};
 }
 
 /*
-	const tableDatas: TableSource = {
-		// A list of heading labels.
-		head: [
-			'businessProviderCode',
-			'partnerCode',
-			'productCode',
-			'businessUnitCode',
-			'communicationType',
-			'templateId'
-		],
-		// The data visibly shown in your table body UI.
-		body: tableMapperValues(values, [
-			'businessProviderCode',
-			'partnerCode',
-			'productCode',
-			'businessUnitCode',
-			'communicationType',
-			'templateId'
-		])
-	};
+	
 */

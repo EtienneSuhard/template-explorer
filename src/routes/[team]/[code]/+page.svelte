@@ -1,36 +1,39 @@
 <script>
-	import { AppShell, Table } from '@skeletonlabs/skeleton';
-
+	import { AppShell } from '@skeletonlabs/skeleton';
 	export let data;
 </script>
 
 <AppShell>
-	<!-- Responsive Container (recommended) -->
-	<div class="table-container">
-		<!-- Native Table Element -->
-		<table class="table table-hover">
-			<thead>
+	<!-- Native Table Element -->
+	<ol class="breadcrumb m-4">
+		<li class="crumb"><a class="anchor" href="/{data.jsonDatas.team}">Code</a></li>
+		<li class="crumb-separator" aria-hidden>&rsaquo;</li>
+		<li>Tableau</li>
+	</ol>
+	<table class="table table-hover gap-4 mx-4 my-4">
+		<thead>
+			<tr>
+				<th>businessProviderCode</th>
+				<th>businessUnitCode</th>
+				<th>channelType</th>
+				<th>partnerCode</th>
+				<th>productCode</th>
+				<th>templateId</th>
+			</tr>
+		</thead>
+		<tbody>
+			{#each data.jsonDatas.configuration as row, i}
 				<tr>
-					<th>BusinessProviderCode</th>
-					<th>BusinessUnitCode</th>
-					<th>CommunicationType</th>
-					<th>PartnerCode</th>
-					<th>ProductCode</th>
-					<th>TemplateId</th>
-				</tr>
-			</thead>
-			<tbody>
-				{#each data.values as row, i}
-					<tr>
+					<a href="/{data.jsonDatas.team}/{data.jsonDatas.code}/{row.templateId}">
 						<td>{row.businessProviderCode}</td>
 						<td>{row.businessUnitCode}</td>
 						<td>{row.channelType}</td>
 						<td>{row.partnerCode}</td>
 						<td>{row.productCode}</td>
 						<td>{row.templateId}</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-	</div>
+					</a>
+				</tr>
+			{/each}
+		</tbody>
+	</table>
 </AppShell>

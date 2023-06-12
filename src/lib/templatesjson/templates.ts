@@ -1,6 +1,8 @@
 import jsonFile from './templates.json';
 
 type Data = {
+	team: string;
+	communicationCode: string;
 	businessProviderCode: string;
 	partnerCode: string;
 	productCode: string;
@@ -9,17 +11,27 @@ type Data = {
 	templateId: string;
 };
 
-type JsonOutputType = {
+type JsonInputType = {
 	team: string;
-	values: {
-		communicationCode: string;
-		businessProviderCode: string | null;
-		partnerCode: string | null;
-		productCode: string | null;
-		businessUnitCode: string;
-		channelType: string;
-		templateId: string;
+	communications: {
+		code: string;
+		configurations: {
+			businessProviderCode: string | null;
+			partnerCode: string | null;
+			productCode: string | null;
+			businessUnitCode: string;
+			channelType: string;
+			templateId: string;
+		}[];
 	}[];
+};
+type Communications = JsonInputType['communications'][0];
+type Configurations = Communications['configurations'][0];
+
+type JsonDataManipulation = {
+	team: string;
+	code: string;
+	configuration: Configurations[];
 };
 
 export type Card = {
@@ -30,47 +42,70 @@ export type Card = {
 	channelType: string[];
 };
 
-export const templates: JsonOutputType[] = jsonFile as any;
+export const templates: JsonInputType[] = jsonFile as any;
 
 export var teams = templates.map((team) => team.team);
 
-export function getCommunicationCode(currentTeam: string): string[] {
-	var allCodes = templates
-		.find((thisteam) => thisteam.team == currentTeam)
-		?.values.map((code) => code.communicationCode);
-	return uniqueItems(allCodes);
+export function createCard(myTeam: string): Card[] {
+	var teamCommunications = templates.find((team) => team.team == myTeam);
+	var communications = teamCommunications!.communications;
+	var cards: Card[] = [];
+	for (var communication of communications) {
+		var card: Card = {
+			team: teamCommunications!.team,
+			communicationCode: communication.code,
+			templatesCount: uniqueItems(
+				communication.configurations.flatMap((templates) => templates.templateId)
+			).length,
+			businessUnitCode: uniqueItems(
+				communication.configurations.map((code) => code.businessUnitCode)
+			).join(', '),
+			channelType: uniqueItems(communication.configurations.map((channel) => channel.channelType))
+		};
+		cards.push(card);
+	}
+	return cards;
 }
 
-export function createCard(currentTeam: string, communicationCode: string): Card {
-	var myteam = templates.find((thisteam) => thisteam.team == currentTeam);
-	var values = myteam?.values.filter((data) => data.communicationCode == communicationCode);
+export function getConfigurations(communicationCode: string, myTeam: string): JsonDataManipulation {
+	var thisTeam = templates.find((team) => team.team == myTeam);
+	var thisCommunication = thisTeam!.communications!.filter(
+		(code) => code.code == communicationCode
+	);
+	var thisConfigurations = thisCommunication.flatMap(
+		(configuration) => configuration.configurations
+	);
 
-	var templateIdCount: number = uniqueItems(values?.flatMap((value) => value.templateId)).length;
-	var businessUnitCode = uniqueItems(values?.flatMap((value) => value.businessUnitCode)).join(', ');
-	var channelType = uniqueItems(values?.flatMap((value) => value.channelType));
+	var JsonDatas: JsonDataManipulation = {
+		team: myTeam,
+		code: communicationCode,
+		configuration: thisConfigurations.flatMap((values) => ({
+			...values,
+			businessProviderCode: notNull(values.businessProviderCode),
+			partnerCode: notNull(values.partnerCode),
+			productCode: notNull(values.productCode)
+		}))
+	};
+	return JsonDatas;
+}
 
-	var card: Card = {
-		team: currentTeam,
-		communicationCode: communicationCode,
-		templatesCount: templateIdCount,
-		businessUnitCode: businessUnitCode,
-		channelType: channelType
+export function getTemplate(
+	communicationCode: string,
+	myTeam: string,
+	templateId: string
+): JsonDataManipulation {
+	var configurations = getConfigurations(communicationCode, myTeam);
+	var thisConfiguration = configurations.configuration.filter(
+		(template) => template.templateId == templateId
+	);
+
+	var JsonDatas: JsonDataManipulation = {
+		team: myTeam,
+		code: communicationCode,
+		configuration: thisConfiguration
 	};
 
-	return card;
-}
-export function communicationCodeValues(communicationCode: string, currentTeam: string): Data[] {
-	var myteam = templates.find((thisteam) => thisteam.team == currentTeam);
-	var values = myteam!.values.filter((data) => data.communicationCode == communicationCode);
-	var datas: Data[] = values?.map((data) => ({
-		businessProviderCode: notNull(data.businessProviderCode),
-		partnerCode: notNull(data.partnerCode),
-		productCode: notNull(data.productCode),
-		businessUnitCode: notNull(data.businessUnitCode),
-		channelType: data.channelType,
-		templateId: data.templateId
-	}));
-	return datas;
+	return JsonDatas;
 }
 
 function notNull(param: string | null): string {

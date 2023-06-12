@@ -1,4 +1,4 @@
-import { teams } from '../lib/templatesjson/templates';
+import { teams } from '$lib/templatesjson/templates';
 
 export function load() {
 	return {

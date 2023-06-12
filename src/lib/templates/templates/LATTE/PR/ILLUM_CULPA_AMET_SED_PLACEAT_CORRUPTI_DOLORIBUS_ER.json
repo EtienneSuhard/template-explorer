@@ -1,0 +1,20 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "9VPEVC"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "EZD8EI"
+        }
+      ]
+    }
+  ]
+}
