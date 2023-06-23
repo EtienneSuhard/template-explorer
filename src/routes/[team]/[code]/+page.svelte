@@ -24,14 +24,16 @@
 		<tbody>
 			{#each data.jsonDatas.configuration as row, i}
 				<tr>
-					<a href="/{data.jsonDatas.team}/{data.jsonDatas.code}/{row.templateId}">
-						<td>{row.businessProviderCode}</td>
-						<td>{row.businessUnitCode}</td>
-						<td>{row.channelType}</td>
-						<td>{row.partnerCode}</td>
-						<td>{row.productCode}</td>
-						<td>{row.templateId}</td>
-					</a>
+					<td>{row.businessProviderCode}</td>
+					<td>{row.businessUnitCode}</td>
+					<td>{row.channelType}</td>
+					<td>{row.partnerCode}</td>
+					<td>{row.productCode}</td>
+					<td>
+						<a href="/{data.jsonDatas.team}/{data.jsonDatas.code}/{row.templateId}">
+							{row.templateId}</a
+						>
+					</td>
 				</tr>
 			{/each}
 		</tbody>

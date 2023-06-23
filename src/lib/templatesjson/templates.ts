@@ -69,9 +69,7 @@ export function createCard(myTeam: string): Card[] {
 
 export function getConfigurations(communicationCode: string, myTeam: string): JsonDataManipulation {
 	var thisTeam = templates.find((team) => team.team == myTeam);
-	var thisCommunication = thisTeam!.communications!.filter(
-		(code) => code.code == communicationCode
-	);
+	var thisCommunication = thisTeam!.communications.filter((code) => code.code == communicationCode);
 	var thisConfigurations = thisCommunication.flatMap(
 		(configuration) => configuration.configurations
 	);
@@ -98,7 +96,6 @@ export function getTemplate(
 	var thisConfiguration = configurations.configuration.filter(
 		(template) => template.templateId == templateId
 	);
-
 	var JsonDatas: JsonDataManipulation = {
 		team: myTeam,
 		code: communicationCode,

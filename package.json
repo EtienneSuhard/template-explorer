@@ -45,6 +45,7 @@
 		"@floating-ui/dom": "^1.2.8",
 		"@types/node": "^18.15.11",
 		"node.js": "^0.0.1-security",
+		"react-serialize": "^0.2.1",
 		"tsx": "^3.12.7"
 	}
 }

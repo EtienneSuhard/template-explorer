@@ -1,68 +1,92 @@
-import { createRandomValue } from './faker';
+import { deserialize } from 'v8';
+import { Np6Faker } from './faker';
+import { faker } from '@faker-js/faker';
 
-/*
-Pour la partie NP6 Action :
-Id = $.id
-Name = $.name
-Status = $.informations.state. Tu as une table de correspondances des Ids avec leur libellé plus haut dans la doc
-Description = $.description
-Culture = $.settings.culture
-From = $.content.headers.from. Il faut reconstruire le libellé avec les 3 variables
-Reply = $.content.headers.reply
-
-Ensuite pour l'email :
-Subject = $.content.subject
-HTML (Formatted) = $.content.html. Le contenu est rendu en html/css
-HTML (raw) : $.content.html. Le contenu est en format textee
-Text = $.content.text
-Inferred variables = on verra plus tard
-
-Pour les SMS on verra plus tard également */
-
-type Template = {
-	np6Action: {
-		id: string;
-		name: string;
-		status: null;
-		description: string;
-		culture: string;
+type EmailTemplate = {
+	type: 'Email';
+	description?: string | null;
+	culture?: string | null;
+	content: {
 		from: string;
 		reply: string;
-	};
-	emailContent: {
 		subject: string;
-		htmlFormatted: null;
-		htmlRaw: null;
+		htmlTemplate: string;
 		text: string;
 	};
 };
+type SmsTemplate = {
+	type: 'Sms';
+	content: string;
+};
 
-export function getApiValue(templateId: string): Template {
-	var fakervalues = createRandomValue(templateId);
+type TemplateAction = (EmailTemplate | SmsTemplate) & {
+	id: string;
+	name: string;
+	status: string;
+};
 
-	var values: Template = {
-		np6Action: {
-			id: templateId,
-			name: fakervalues.name,
-			status: null,
+export function getApiValue(templateId: string, type: TemplateAction['type']): TemplateAction {
+	const fakervalues = Np6Faker(type);
+	const baseAction = {
+		id: templateId,
+		name: fakervalues.name,
+		status: findStatusObj(fakervalues.informations.state)
+	} satisfies Partial<TemplateAction>;
+
+	if (fakervalues.type === 'Email') {
+		return {
+			...baseAction,
+			type: 'Email',
 			description: fakervalues.description,
 			culture: fakervalues.settings.culture,
-			from:
-				fakervalues.content.headers.from.prefix +
-				fakervalues.content.headers.from.domain +
-				fakervalues.content.headers.from.label,
-			reply:
-				fakervalues.content.headers.reply.prefix +
-				fakervalues.content.headers.from.domain +
-				fakervalues.content.headers.from.label
-		},
-		emailContent: {
-			subject: fakervalues.content.subject,
-			htmlFormatted: null,
-			htmlRaw: null,
-			text: fakervalues.content.text
-		}
+			content: {
+				from:
+					fakervalues.content.headers.from.prefix +
+					fakervalues.content.headers.from.domain +
+					fakervalues.content.headers.from.label,
+				reply:
+					fakervalues.content.headers.reply.prefix +
+					fakervalues.content.headers.from.domain +
+					fakervalues.content.headers.from.label,
+				subject: fakervalues.content.subject,
+				htmlTemplate: fakervalues.content.html,
+				text: fakervalues.content.text
+			}
+		};
+	} else {
+		return {
+			...baseAction,
+			type: 'Sms',
+			content: fakervalues.content.textContent
+		};
+	}
+}
+
+function findStatusObj(thisStatus: number): string {
+	var status: Record<number, string> = {
+		10: 'Création',
+		20: 'Crée',
+		30: 'Test requis',
+		35: 'Test en cours',
+		36: 'Test en erreur',
+		38: 'Demande de validation',
+		40: 'Attente de validation',
+		50: 'Validé',
+		55: 'Génération',
+		60: 'Refusé',
+		65: 'Lancement en attente',
+		70: 'En cours',
+		72: 'En pause',
+		73: 'Arrêté',
+		75: 'Erreur',
+		80: 'Terminé',
+		90: 'Supprimé',
+		100: 'Gelé',
+		110: 'Archivé'
 	};
 
-	return values;
+	if (!status.hasOwnProperty(thisStatus)) {
+		return 'Inconnu: XX';
+	}
+	return `${thisStatus}: ${status[thisStatus]}`;
 }

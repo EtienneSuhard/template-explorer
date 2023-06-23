@@ -19,10 +19,10 @@
 	</ol>
 
 	<div>
-		<div class="gap-4 m-6">
-			<h2 class="my-4">Template</h2>
+		<div class="gap-4 m-6 appearance-none">
+			<h2 class="m-8">Template</h2>
 			{#each data.jsonDatas.configuration as configuration}
-				<div class="mt-6 flex w-50">
+				<div class="mt-6 mx-4">
 					<dl class="grid grid-cols-2">
 						<div class="border-r">
 							<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y mx-4">
@@ -68,73 +68,110 @@
 				</div>
 			{/each}
 		</div>
+
 		<div class="gap-4 m-6">
-			<h2 class="my-4">Np6</h2>
-			<div class="mt-6 flex w-50">
-				<dl class="grid grid-rows-4">
-					<div class="grid grid-cols-3 border-t mx-4">
-						<div class="my-4 border-r">
-							<div class="py-6 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-0 mx-4">
-								<dt class="mx-1 font-medium leading-6">Name</dt>
-								<dd class="mt-1 leading-6 text-gray-500 sm:col-span-3 sm:mt-0">
-									{data.api.np6Action.name}
+			<h2 class="m-8">Np6</h2>
+			<div class="grid grid-cols-2 mx-4 flex">
+				<div class="border-r">
+					<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y mx-4">
+						<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Name</dt>
+						<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-2">
+							{data.api.name}
+						</dd>
+					</div>
+				</div>
+				<div class="">
+					<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y mx-4">
+						<dt class="mx-6 my-4 font-medium leading-6">Status</dt>
+						<dd class="mx-6 py-4 leading-6 text-gray-500 sm:col-span-2 sm:mt-0">
+							{data.api.status}
+						</dd>
+					</div>
+				</div>
+			</div>
+			{#if data.api.type === 'Email'}
+				<dl class="grid grid-rows-3">
+					<div class="grid grid-cols-2 mx-4">
+						<div class="border-r">
+							<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-b mx-4">
+								<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">From</dt>
+								<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-2">
+									{data.api.content.from}
 								</dd>
 							</div>
 						</div>
-						<div class="my-4 border-r">
-							<div class="py-6 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-0 mx-4">
-								<dt class="mx-6 font-medium leading-6">Status</dt>
-								<dd class="mx-6 mt-1 leading-6 text-gray-500 sm:col-span-3 sm:mt-0">
-									{data.api.np6Action.status}
-								</dd>
-							</div>
-						</div>
-						<div class="my-4">
-							<div class="py-6 sm:grid sm:grid-cols-4 sm:gap-4 sm:px-0 mx-4">
-								<dt class="mx-6 font-medium leading-6">Culture</dt>
-								<dd class="mx-6 mt-1 leading-6 text-gray-500 sm:col-span-3 sm:mt-0">
-									{data.api.np6Action.culture}
+						<div class="">
+							<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-b mx-4">
+								<dt class="mx-6 my-4 font-medium leading-6">Reply</dt>
+								<dd class="mx-6 py-4 mt-1 leading-6 text-gray-500 sm:col-span-2 sm:mt-0">
+									{data.api.content.reply}
 								</dd>
 							</div>
 						</div>
 					</div>
-					<div class="py-6 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-0 border-y mx-4">
-						<dt class="m-4 font-medium leading-6">Description</dt>
-						<dd class="m-4 leading-6 text-gray-500 sm:col-span-5">
-							{data.api.np6Action.description}
-						</dd>
+					<div class="mx-4">
+						<div class="">
+							<div class="py-6 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-0 mx-4">
+								<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Culture</dt>
+								<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-5">
+									{data.api.culture}
+								</dd>
+							</div>
+						</div>
 					</div>
-					<div class="py-6 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-0 border-y-collapse mx-4">
-						<dt class="m-4 font-medium leading-6">From</dt>
-						<dd class="m-4 leading-6 text-gray-500 sm:col-span-5">
-							{data.api.np6Action.from}
-						</dd>
-					</div>
-					<div class="py-6 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-0 border-y mx-4">
-						<dt class="m-4 font-medium leading-6">Reply</dt>
-						<dd class="m-4 leading-6 text-gray-500 sm:col-span-5">
-							{data.api.np6Action.reply}
-						</dd>
+					<div class="mx-4">
+						<div class="">
+							<div class="py-6 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-0 border-y mx-4">
+								<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Description</dt>
+								<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-5">
+									{data.api.description}
+								</dd>
+							</div>
+						</div>
 					</div>
 				</dl>
-			</div>
-		</div>
-		<div>
-			<TabGroup>
-				<Tab bind:group={tabSet} name="HTMLformatted" value={0}>HTML formatted</Tab>
-				<Tab bind:group={tabSet} name="HTMLrow" value={1}>HTML row</Tab>
-				<Tab bind:group={tabSet} name="text" value={2}>Text</Tab>
 
-				<svelte:fragment slot="panel">
-					{#if tabSet === 0}
-						{data.api.emailContent.htmlFormatted}
-					{:else if tabSet === 1}
-						{data.api.emailContent.htmlRaw}
-					{:else if tabSet === 2}
-						{data.api.emailContent.text}
-					{/if}
-				</svelte:fragment>
-			</TabGroup>
+				<TabGroup class="gap-4 m-8">
+					<Tab bind:group={tabSet} name="HTMLformatted" value={0}>HTML formatted</Tab>
+					<Tab bind:group={tabSet} name="HTMLrow" value={1}>HTML row</Tab>
+					<Tab bind:group={tabSet} name="text" value={2}>Text</Tab>
+
+					<svelte:fragment slot="panel">
+						{#if tabSet === 0}
+							<div class="m-6">
+								{@html data.api.content.htmlTemplate}
+							</div>
+						{:else if tabSet === 1}
+							<div class="m-6 appearance-none">
+								<pre style="background-color: initial; color:black">
+								{data.api.content.htmlTemplate}
+							</pre>
+							</div>
+						{:else if tabSet === 2}
+							<div class="m-6">
+								{data.api.content.text}
+							</div>
+						{/if}
+					</svelte:fragment>
+				</TabGroup>
+			{:else}
+				<TabGroup class="gap-4 m-8">
+					<Tab bind:group={tabSet} name="content" value={0}>Content</Tab>
+					<svelte:fragment slot="panel">
+						{#if tabSet === 0}
+							<div class="m-6">
+								{@html data.api.content}
+							</div>
+						{/if}
+					</svelte:fragment>
+				</TabGroup>
+			{/if}
 		</div>
 	</div>
 </AppShell>
+
+<style>
+	.reset-style {
+		all: revert;
+	}
+</style>
