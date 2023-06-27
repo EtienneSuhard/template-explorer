@@ -4,7 +4,7 @@ import type { Card } from '$lib/templatesjson/templates';
 
 export function load({ params }) {
 	var cards: Card[] = createCard(params.team);
-
+	console.log(new Date());
 	return {
 		cards
 	};

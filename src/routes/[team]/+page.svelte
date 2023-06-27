@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { AppShell } from '@skeletonlabs/skeleton';
 	import type { PageData } from './$types';
-	import { createSearchStore, searchHandler } from '$lib/stores/search';
-	import { onDestroy } from 'svelte';
+	import { createSearchStore } from '$lib/stores/search';
 	import { Autocomplete } from '@skeletonlabs/skeleton';
 	import type { AutocompleteOption } from '@skeletonlabs/skeleton';
 	import { popup } from '@skeletonlabs/skeleton';
@@ -11,25 +10,28 @@
 	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 	import Icon from '@iconify/svelte';
+	import { writable, type Readable, type Writable } from 'svelte/store';
+	import type { Card } from '$lib/templatesjson/templates';
 
 	export let data: PageData;
 
-	var codesOptions: AutocompleteOption[] = data.cards.map((card) => ({
-		label: `${card.communicationCode}`,
-		value: `${card.communicationCode}`
-	}));
-
-	function onSelection(event: any): void {
-		$searchStore.search = event.detail.label;
+	const searchValue = writable('');
+	let searchStore: Readable<Card[]>;
+	$: {
+		searchValue.set('');
+		searchStore = createSearchStore(searchValue, data.cards);
 	}
 
-	var searchStore = createSearchStore(data.cards);
+	$: codesOptions = data.cards.map((card) => ({
+		label: `${card.communicationCode}`,
+		value: `${card.communicationCode}`
+	})) as AutocompleteOption[];
 
-	var unsubscribe = searchStore.subscribe((model) => searchHandler(model));
+	// var unsubscribe = searchValue.subscribe((value) => searchStore.filter(value));
 
-	onDestroy(() => {
-		unsubscribe();
-	});
+	// onDestroy(() => {
+	// 	unsubscribe();
+	// });
 
 	var popupSettings: PopupSettings = {
 		event: 'focus',
@@ -40,7 +42,7 @@
 
 <AppShell>
 	<div
-		class="mx-4 my-4 input-group input-group-divider grid-cols-[auto_1fr_auto] container flex-none w-64 shadow-md"
+		class="mx-6 my-8 input-group input-group-divider grid-cols-[auto_1fr_auto] container flex-none w-96 shadow-md"
 	>
 		<div class="input-group-shim">
 			<Icon icon="material-symbols:search" />
@@ -50,25 +52,25 @@
 			class="input autocomplete"
 			type="search"
 			placeholder="Search..."
-			bind:value={$searchStore.search}
+			bind:value={$searchValue}
 			use:popup={popupSettings}
 		/>
 	</div>
 
 	<div
-		class="card w-full max-w-sm max-h-48 p-4 overflow-y-auto border-2 border-violet"
+		class="card w-96 max-h-48 p-4 overflow-y-auto border-2 border-violet"
 		data-popup="popupSettings"
 	>
 		<Autocomplete
-			bind:input={$searchStore.search}
+			bind:input={$searchValue}
 			options={codesOptions}
-			on:selection={onSelection}
+			on:selection={(event) => ($searchValue = event.detail.label)}
 		/>
 	</div>
 
 	<br />
 	<div class="gap-4 mx-4 flex-wrap flex">
-		{#each $searchStore.filtered as code}
+		{#each $searchStore as code}
 			<a
 				href="/{code.team}/{code.communicationCode}"
 				class="card card-hover mx-2 my-2 flex-initial card w-96 h-64 overflow-hidden variant-initial shadow-lg no-underline justify-between"

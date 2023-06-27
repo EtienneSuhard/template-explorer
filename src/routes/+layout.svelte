@@ -17,7 +17,7 @@
 				<ul class="list">
 					<li>
 						<nav>
-							<a rel="external" href="/{team}">{team}</a>
+							<a href="/{team}">{team}</a>
 						</nav>
 					</li>
 				</ul>

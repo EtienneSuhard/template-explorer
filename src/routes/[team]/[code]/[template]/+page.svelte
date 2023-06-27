@@ -9,10 +9,12 @@
 
 <AppShell>
 	<ol class=" breadcrumb gap-4 m-4">
-		<li class="crumb"><a class="anchor" href="/{data.jsonDatas.team}">Code</a></li>
+		<li class="crumb"><a class="anchor" href="/{data.jsonDatas.team}">{data.jsonDatas.code}</a></li>
 		<li class="crumb-separator" aria-hidden>&rsaquo;</li>
 		<li class="crumb">
-			<a class="anchor" href="/{data.jsonDatas.team}/{data.jsonDatas.code}">Tableau</a>
+			<a class="anchor" href="/{data.jsonDatas.team}/{data.jsonDatas.code}"
+				>{data.jsonDatas.configuration}</a
+			>
 		</li>
 		<li class="crumb-separator" aria-hidden>&rsaquo;</li>
 		<li>Template</li>
@@ -138,9 +140,12 @@
 
 					<svelte:fragment slot="panel">
 						{#if tabSet === 0}
-							<div class="m-6">
-								{@html data.api.content.htmlTemplate}
-							</div>
+							<iframe
+								title="template"
+								class="w-full"
+								height="1000"
+								srcdoc={data.api.content.htmlTemplate}
+							/>
 						{:else if tabSet === 1}
 							<div class="m-6 appearance-none">
 								<pre style="background-color: initial; color:black">
@@ -159,9 +164,7 @@
 					<Tab bind:group={tabSet} name="content" value={0}>Content</Tab>
 					<svelte:fragment slot="panel">
 						{#if tabSet === 0}
-							<div class="m-6">
-								{@html data.api.content}
-							</div>
+							{data.api.content}
 						{/if}
 					</svelte:fragment>
 				</TabGroup>
@@ -172,6 +175,6 @@
 
 <style>
 	.reset-style {
-		all: revert;
+		all: initial;
 	}
 </style>
