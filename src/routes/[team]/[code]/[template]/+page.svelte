@@ -8,67 +8,65 @@
 </script>
 
 <AppShell>
-	<ol class=" breadcrumb gap-4 m-4">
-		<li class="crumb"><a class="anchor" href="/{data.jsonDatas.team}">{data.jsonDatas.code}</a></li>
+	<ol class=" breadcrumb m-4">
+		<li class="crumb"><a class="anchor" href="/{data.jsonDatas.team}">{data.jsonDatas.team}</a></li>
 		<li class="crumb-separator" aria-hidden>&rsaquo;</li>
 		<li class="crumb">
-			<a class="anchor" href="/{data.jsonDatas.team}/{data.jsonDatas.code}"
-				>{data.jsonDatas.configuration}</a
+			<a class="anchor" href="/{data.jsonDatas.team}/{data.jsonDatas.code}">{data.jsonDatas.code}</a
 			>
 		</li>
 		<li class="crumb-separator" aria-hidden>&rsaquo;</li>
-		<li>Template</li>
+		<li>{data.jsonDatas.templateId}</li>
 	</ol>
 
 	<div>
 		<div class="gap-4 m-6 appearance-none">
 			<h2 class="m-8">Template</h2>
-			{#each data.jsonDatas.configuration as configuration}
-				<div class="mt-6 mx-4">
-					<dl class="grid grid-cols-2">
-						<div class="border-r">
-							<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y mx-4">
-								<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Business provider code</dt>
-								<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-20">
-									{configuration.businessProviderCode}
-								</dd>
-							</div>
-							<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y-collapse mx-4">
-								<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Partner code</dt>
-								<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-2">
-									{configuration.partnerCode}
-								</dd>
-							</div>
-							<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y mx-4">
-								<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Channel type</dt>
-								<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-2">
-									{configuration.channelType}
-								</dd>
-							</div>
+
+			<div class="mt-6 mx-4">
+				<dl class="grid grid-cols-2">
+					<div class="border-r">
+						<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y mx-4">
+							<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Business provider code</dt>
+							<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-20">
+								{data.jsonDatas.businessProviderCode}
+							</dd>
 						</div>
-						<div>
-							<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y mx-4">
-								<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Business unit code</dt>
-								<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-2">
-									{configuration.businessUnitCode}
-								</dd>
-							</div>
-							<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y-collapse mx-4">
-								<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Product code</dt>
-								<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-2">
-									{configuration.productCode}
-								</dd>
-							</div>
-							<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y mx-4">
-								<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Template id</dt>
-								<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-2">
-									{configuration.templateId}
-								</dd>
-							</div>
+						<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y-collapse mx-4">
+							<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Partner code</dt>
+							<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-2">
+								{data.jsonDatas.partnerCode}
+							</dd>
 						</div>
-					</dl>
-				</div>
-			{/each}
+						<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y mx-4">
+							<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Channel type</dt>
+							<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-2">
+								{data.jsonDatas.channelType}
+							</dd>
+						</div>
+					</div>
+					<div>
+						<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y mx-4">
+							<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Business unit code</dt>
+							<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-2">
+								{data.jsonDatas.businessUnitCode}
+							</dd>
+						</div>
+						<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y-collapse mx-4">
+							<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Product code</dt>
+							<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-2">
+								{data.jsonDatas.productCode}
+							</dd>
+						</div>
+						<div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0 border-y mx-4">
+							<dt class="mx-6 my-4 font-medium leading-6 shrink w-48">Template id</dt>
+							<dd class="mx-6 my-4 leading-6 text-gray-500 sm:col-span-2">
+								{data.jsonDatas.templateId}
+							</dd>
+						</div>
+					</div>
+				</dl>
+			</div>
 		</div>
 
 		<div class="gap-4 m-6">
@@ -172,9 +170,3 @@
 		</div>
 	</div>
 </AppShell>
-
-<style>
-	.reset-style {
-		all: initial;
-	}
-</style>

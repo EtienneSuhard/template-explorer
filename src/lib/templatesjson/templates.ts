@@ -87,19 +87,27 @@ export function getConfigurations(communicationCode: string, myTeam: string): Js
 	return JsonDatas;
 }
 
-export function getTemplate(
-	communicationCode: string,
-	myTeam: string,
-	templateId: string
-): JsonDataManipulation {
+export function getTemplate(communicationCode: string, myTeam: string, templateId: string) {
 	var configurations = getConfigurations(communicationCode, myTeam);
 	var thisConfiguration = configurations.configuration.filter(
 		(template) => template.templateId == templateId
 	);
-	var JsonDatas: JsonDataManipulation = {
+	var JsonDatas = {
 		team: myTeam,
 		code: communicationCode,
-		configuration: thisConfiguration
+		businessProviderCode: configurations.configuration.find(
+			(template) => template.templateId == templateId
+		)?.businessProviderCode,
+		partnerCode: configurations.configuration.find((template) => template.templateId == templateId)
+			?.partnerCode,
+		productCode: configurations.configuration.find((template) => template.templateId == templateId)
+			?.productCode,
+		businessUnitCode: configurations.configuration.find(
+			(template) => template.templateId == templateId
+		)?.businessUnitCode,
+		channelType: configurations.configuration.find((template) => template.templateId == templateId)
+			?.businessProviderCode,
+		templateId: templateId
 	};
 
 	return JsonDatas;

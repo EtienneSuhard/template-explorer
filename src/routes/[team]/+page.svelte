@@ -27,12 +27,6 @@
 		value: `${card.communicationCode}`
 	})) as AutocompleteOption[];
 
-	// var unsubscribe = searchValue.subscribe((value) => searchStore.filter(value));
-
-	// onDestroy(() => {
-	// 	unsubscribe();
-	// });
-
 	var popupSettings: PopupSettings = {
 		event: 'focus',
 		target: 'popupSettings',
@@ -58,7 +52,7 @@
 	</div>
 
 	<div
-		class="card w-96 max-h-48 p-4 overflow-y-auto border-2 border-violet"
+		class="card w-124 max-h-64 p-4 overflow-y-auto border-2 border-violet"
 		data-popup="popupSettings"
 	>
 		<Autocomplete

@@ -6,9 +6,9 @@
 <AppShell>
 	<!-- Native Table Element -->
 	<ol class="breadcrumb m-4">
-		<li class="crumb"><a class="anchor" href="/{data.jsonDatas.team}">{data.jsonDatas.code}</a></li>
+		<li class="crumb"><a class="anchor" href="/{data.jsonDatas.team}">{data.jsonDatas.team}</a></li>
 		<li class="crumb-separator" aria-hidden>&rsaquo;</li>
-		<li>Tableau</li>
+		<li>{data.jsonDatas.code}</li>
 	</ol>
 	<table class="table table-hover gap-4 mx-4 my-4">
 		<thead>
