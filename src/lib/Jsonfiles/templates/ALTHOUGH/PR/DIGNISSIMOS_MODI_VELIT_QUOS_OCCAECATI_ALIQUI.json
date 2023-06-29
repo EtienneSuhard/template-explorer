@@ -1,0 +1,26 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "FO92EY"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "HM"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "EZF9XC"
+        }
+      ]
+    }
+  ]
+}

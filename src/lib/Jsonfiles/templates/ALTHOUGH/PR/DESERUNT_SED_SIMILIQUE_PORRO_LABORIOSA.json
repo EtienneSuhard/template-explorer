@@ -1,0 +1,30 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "FAC",
+        "ProductCode": "CORPORIS_EXPLICABO",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "ASQ8VF"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "FAC",
+        "ProductCode": "TEMPORE_ULLAM_NECESSI",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "POXLT1"
+        }
+      ]
+    }
+  ]
+}

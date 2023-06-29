@@ -1,0 +1,40 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "VOLUPTAS_SU",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "B5PTZX"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "VOLUPTAS_SU",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "RXFUYW"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "VOLUPTAS_SU",
+        "BusinessUnitCode": "HM"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "51K9H6"
+        }
+      ]
+    }
+  ]
+}

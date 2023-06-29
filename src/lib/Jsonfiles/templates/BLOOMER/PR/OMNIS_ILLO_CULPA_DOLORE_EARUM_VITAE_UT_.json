@@ -1,0 +1,45 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "HIC_VERO_EST_D",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "JGNN6A"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "DUT19B"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "QBMP8Q"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    }
+  ]
+}

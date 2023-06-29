@@ -1,0 +1,134 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "ISTE_TEM",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "ProductCode": "DESERUNT_SED_APERIAM_Q",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Sms",
+          "TemplateId": "C89B5K"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "LIBERO_DOLOR",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "ODIT_SI",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "DOLORIBUS",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "ProductCode": "DESERUNT_SED_APERIAM_Q",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": [
+        {
+          "Channel": "Sms",
+          "TemplateId": "YX23EJ"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "ProductCode": "DESERUNT_SED_APERIAM_Q",
+        "BusinessUnitCode": "HM"
+      },
+      "Actions": [
+        {
+          "Channel": "Sms",
+          "TemplateId": "KUUSYZ"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "ASPER",
+        "BusinessUnitCode": "MO"
+      },
+      "Actions": [
+        {
+          "Channel": "Sms",
+          "TemplateId": "MJ0XIK"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "ALIQUID_REPUDI",
+        "BusinessUnitCode": "MO"
+      },
+      "Actions": [
+        {
+          "Channel": "Sms",
+          "TemplateId": "2YGIIU"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "ProductCode": "DESERUNT_SED_APERIAM_Q",
+        "BusinessUnitCode": "MO"
+      },
+      "Actions": [
+        {
+          "Channel": "Sms",
+          "TemplateId": "6S1MLD"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "HARUM_V",
+        "BusinessUnitCode": "DG"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "QUO_SOLU",
+        "BusinessUnitCode": "DG"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "ProductCode": "DESERUNT_SED_APERIAM_Q",
+        "BusinessUnitCode": "DG"
+      },
+      "Actions": [
+        {
+          "Channel": "Sms",
+          "TemplateId": "29GI93"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "HIC_VERO_EST_D",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "XFJJQQ"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "PartnerCode": "OFFIC",
+        "BusinessUnitCode": "HM"
+      },
+      "Actions": [
+        {
+          "Channel": "Sms",
+          "TemplateId": "ZPZFYD"
+        }
+      ]
+    }
+  ]
+}

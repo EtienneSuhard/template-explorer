@@ -1,0 +1,84 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "DG"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "NJNMRM"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "MPHBSZ"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "FO7RCH"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "MUOKY1"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "LEYFRD"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "IBA80V"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "HM"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "89LONF"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "W2570L"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "MO"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "B74P8U"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "4W93JE"
+        }
+      ]
+    }
+  ]
+}

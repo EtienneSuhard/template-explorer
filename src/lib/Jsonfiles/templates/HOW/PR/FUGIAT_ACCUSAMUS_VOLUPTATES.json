@@ -1,0 +1,79 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "VEL_LIBERO_",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "T07DG9"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "QUIA",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "D4556Q"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "OCCAECATI",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "7XZDNK"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "PartnerCode": "TEMPORIB",
+        "ProductCode": "DOLOR_ANIMI_QU",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "JC0WKZ"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "PartnerCode": "TEMPORIB",
+        "ProductCode": "PROVIDENT_MINIMA_",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "4LZA4E"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "PartnerCode": "OFFIC",
+        "ProductCode": "PROVIDENT_MINIMA_",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "SOLO9O"
+        }
+      ]
+    }
+  ]
+}

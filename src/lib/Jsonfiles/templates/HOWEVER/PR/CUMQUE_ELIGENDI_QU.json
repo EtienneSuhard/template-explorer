@@ -1,0 +1,59 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "MAXIME_VITAE_ACCUSA",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "7IPPY1"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "K5WF7Y"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "DOLORIBUS_NUMQUAM_NIHIL_POSS",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "TRPPUJ"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "EEMG9N"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "PartnerCode": "FAC",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "W7YDU7"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "WD018X"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    }
+  ]
+}

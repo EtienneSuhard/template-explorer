@@ -1,0 +1,61 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "PartnerCode": "OFFIC",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "CL2YWQ"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "PartnerCode": "OFFIC",
+        "BusinessUnitCode": "HM"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "RWM43U"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "PartnerCode": "OFFIC",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "5H3PUF"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "HM"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": []
+    }
+  ]
+}

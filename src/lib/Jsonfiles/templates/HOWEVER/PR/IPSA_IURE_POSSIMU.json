@@ -1,0 +1,55 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "SUSCIPIT_QUIBUSDAM_R",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "17TDHY"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "0Q4QAM"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "DOLORIBUS_NUMQUAM_NIHIL_POSS",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "U6JS7L"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "SF4G2W"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "PartnerCode": "FAC",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Sms",
+          "TemplateId": "9O0EPE"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    }
+  ]
+}

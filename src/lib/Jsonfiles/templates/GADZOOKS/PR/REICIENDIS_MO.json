@@ -1,0 +1,28 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "ProductCode": "ID_EX_VEL_DOLORIBUS_FUG",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "9D8H5R"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "ProductCode": "FUGIAT_PRAESENTIUM_D",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "F4K2XY"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "DG"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "DG"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "DG"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "19WN0Z"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "ODIT_SI",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "DOLORIBUS",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "H6YE0Z"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "RERUM_NUMQUA",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "QUIDEM_REPEL",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "PRAESENTIUM_",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "AT_APERIA",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "DOLOR",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "PARIATUR_TEM",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "RQTD64"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "HM"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "HM"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "HM"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "C97TYC"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "ASPER",
+        "BusinessUnitCode": "MO"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "ALIQUID_REPUDI",
+        "BusinessUnitCode": "MO"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "MO"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "MO"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "MO"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "WXT3UJ"
+        }
+      ]
+    }
+  ]
+}

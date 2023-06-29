@@ -1,0 +1,75 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "ProductCode": "PROVIDENT_MINIMA_",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "HKT456"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "ProductCode": "ID_EX_VEL_DOLORIBUS_FUG",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "ZA9C22"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "ProductCode": "FUGIAT_PRAESENTIUM_D",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "WC53M0"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "7VCSYO"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "HM"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "MO"
+      },
+      "Actions": []
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessUnitCode": "DG"
+      },
+      "Actions": []
+    }
+  ]
+}

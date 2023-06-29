@@ -1,0 +1,91 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "DOLORIBUS_NUMQUAM_NIHIL_POSS",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "ASHM7A"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "2X6GZ3"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "ERROR_QUIA_QUIBUSDAM_REP",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "5MPG6R"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "Q10QPX"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "MAXIME_VITAE_ACCUSA",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "0ZNJJ5"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "T5WG1I"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "SUSCIPIT_QUIBUSDAM_R",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "S4IBIG"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "XHDRFI"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "PartnerCode": "FAC",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "WWAM78"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "X5FQT3"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": []
+    }
+  ]
+}

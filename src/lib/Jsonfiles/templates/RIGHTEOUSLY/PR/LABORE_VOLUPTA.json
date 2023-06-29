@@ -1,0 +1,16 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Sms",
+          "TemplateId": "WVLWCM"
+        }
+      ]
+    }
+  ]
+}

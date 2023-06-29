@@ -1,0 +1,16 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "HM"
+      },
+      "Actions": [
+        {
+          "Channel": "Sms",
+          "TemplateId": "BW3VED"
+        }
+      ]
+    }
+  ]
+}

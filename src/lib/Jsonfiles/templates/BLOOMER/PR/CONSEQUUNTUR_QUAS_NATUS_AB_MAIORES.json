@@ -1,0 +1,16 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "MOLLITIA_EOS_",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "ZV69WF"
+        }
+      ]
+    }
+  ]
+}

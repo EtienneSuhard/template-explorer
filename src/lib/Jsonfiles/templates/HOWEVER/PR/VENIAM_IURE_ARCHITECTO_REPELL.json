@@ -1,0 +1,36 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "ZVOR8I"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "MQOO2A"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "MO"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "STGKBB"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "2FJ0CA"
+        }
+      ]
+    }
+  ]
+}

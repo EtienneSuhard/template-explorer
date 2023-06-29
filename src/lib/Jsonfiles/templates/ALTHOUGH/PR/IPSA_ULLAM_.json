@@ -1,0 +1,16 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "ProductCode": "PROVIDENT_MINIMA_",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "E9Y7FK"
+        }
+      ]
+    }
+  ]
+}

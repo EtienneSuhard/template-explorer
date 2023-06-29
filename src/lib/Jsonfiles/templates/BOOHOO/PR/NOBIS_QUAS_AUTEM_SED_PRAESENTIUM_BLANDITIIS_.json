@@ -1,0 +1,32 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "PartnerCode": "SINT_NEQUE_",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "7OFFGY"
+        },
+        {
+          "Channel": "Email",
+          "TemplateId": "CNN16L"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "9W1MQW"
+        },
+        {
+          "Channel": "Email",
+          "TemplateId": "CEIMY2"
+        },
+        {
+          "Channel": "Email",
+          "TemplateId": "VMJWM8"
+        }
+      ]
+    }
+  ]
+}

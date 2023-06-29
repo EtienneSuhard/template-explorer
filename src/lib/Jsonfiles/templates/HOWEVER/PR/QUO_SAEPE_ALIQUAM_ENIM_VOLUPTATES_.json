@@ -1,0 +1,52 @@
+{
+  "CommunicationBusinessRules": [
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "EX"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "3HUTHJ"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "U0IY8K"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "NT"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "WL0Q58"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "NYBGVR"
+        }
+      ]
+    },
+    {
+      "BusinessDimensionValues": {
+        "BusinessProviderCode": "*",
+        "BusinessUnitCode": "MO"
+      },
+      "Actions": [
+        {
+          "Channel": "Email",
+          "TemplateId": "3B0LVK"
+        },
+        {
+          "Channel": "Sms",
+          "TemplateId": "XZ5OWV"
+        }
+      ]
+    }
+  ]
+}
